@@ -8,6 +8,6 @@ RUN apk add curl && \
         curl -vvv -L -o "$RABBITMQ_HOME/plugins/rabbitmq_delayed_message_exchange-${PLUGIN_VERSION}.ez" \
         https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/releases/download/${PLUGIN_VERSION}/rabbitmq_delayed_message_exchange-${PLUGIN_VERSION}.ez
 
-COPY 10-defaults.conf /etc/rabbitmq/conf.d/10-defaults.conf
+COPY advanced.config /etc/rabbitmq/advanced.config
 
 RUN rabbitmq-plugins enable --offline rabbitmq_delayed_message_exchange
